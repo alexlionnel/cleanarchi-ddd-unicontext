@@ -48,6 +48,26 @@
                 <artifactId>presentation</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>io.albrains.cleanarchitecture.unicontext.infrastructure</groupId>
+                <artifactId>kafka-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.albrains.cleanarchitecture.unicontext.infrastructure</groupId>
+                <artifactId>kafka-config-data</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.albrains.cleanarchitecture.unicontext.infrastructure</groupId>
+                <artifactId>kafka-producer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.albrains.cleanarchitecture.unicontext.infrastructure</groupId>
+                <artifactId>kafka-consumer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.projectlombok</groupId>

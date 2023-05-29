@@ -37,14 +37,4 @@ public class BankAccountRepositoryAdapter implements BankAccountRepositoryPort {
     public void update(BankAccount bankAccount) {
 
     }
-
-    @Override
-    public AccountId nextAccountId() {
-        return null;
-    }
-
-    @Override
-    public AccountNumber nextAccountNumber() {
-        return null;
-    }
 }
