@@ -1,4 +1,4 @@
-package io.albrains.cleanarchitecture.unicontext;
+package io.albrains.cleanarchitecture.unicontext.infrastructure;
 
 public class Main {
     public static void main(String[] args) {
