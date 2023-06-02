@@ -48,7 +48,6 @@ public class OpenAccountUseCase implements CommandHandler<OpenAccountRequest, Op
 
         var bankAccount = createBankAccount(nationalIdentity, accountHolderName, balance, timestamp);
 
-        // TODO: VC: Value object for national identity number
         var exists = nationalIdentityGateway.exists(nationalIdentity);
         if(!exists) {
             throw new ValidationException(ValidationMessages.NATIONAL_IDENTITY_NUMBER_NONEXISTENT);
