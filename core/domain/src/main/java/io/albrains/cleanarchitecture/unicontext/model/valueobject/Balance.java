@@ -6,10 +6,13 @@ import java.math.BigDecimal;
 
 import static io.albrains.cleanarchitecture.unicontext.model.common.guard.Guard.guard;
 
-public record Balance(Money value) {
+public class Balance {
 
-    public Balance {
+    private final Money value;
+
+    private Balance(Money value) {
         guard(value).againstNegative(ValidationMessages.BALANCE_NEGATIVE);
+        this.value = value;
     }
 
     public Balance add(TransactionAmount amount) {
@@ -26,5 +29,9 @@ public record Balance(Money value) {
 
     public static Balance of(BigDecimal value) {
         return new Balance(Money.of(value));
+    }
+
+    public Money getValue() {
+        return value;
     }
 }

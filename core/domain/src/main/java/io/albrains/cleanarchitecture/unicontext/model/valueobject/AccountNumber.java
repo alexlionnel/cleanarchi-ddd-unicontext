@@ -5,9 +5,13 @@ import io.albrains.cleanarchitecture.unicontext.model.common.guard.Guard;
 
 import java.util.UUID;
 
-public record AccountNumber(UUID value) {
-    public AccountNumber {
+public class AccountNumber {
+
+    private final UUID value;
+
+    private AccountNumber(UUID value) {
         Guard.guard(value).againstNull(ValidationMessages.ACCOUNT_NUMBER_EMPTY);
+        this.value = value;
     }
 
     public static AccountNumber of(UUID value) {
@@ -22,5 +26,9 @@ public record AccountNumber(UUID value) {
 
     public static AccountNumber next() {
         return new AccountNumber(UUID.randomUUID());
+    }
+
+    public UUID getValue() {
+        return value;
     }
 }

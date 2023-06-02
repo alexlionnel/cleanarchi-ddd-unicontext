@@ -7,10 +7,12 @@ import io.albrains.cleanarchitecture.unicontext.model.valueobject.AccountHolderN
 import io.albrains.cleanarchitecture.unicontext.model.valueobject.AccountId;
 import io.albrains.cleanarchitecture.unicontext.model.valueobject.AccountNumber;
 import io.albrains.cleanarchitecture.unicontext.model.valueobject.Balance;
+import io.albrains.cleanarchitecture.unicontext.model.valueobject.Money;
 import io.albrains.cleanarchitecture.unicontext.model.valueobject.NationalIdentity;
 import io.albrains.cleanarchitecture.unicontext.model.valueobject.TransactionAmount;
 import lombok.EqualsAndHashCode;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import static io.albrains.cleanarchitecture.unicontext.model.common.guard.Guard.guard;

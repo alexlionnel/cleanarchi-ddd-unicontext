@@ -39,7 +39,7 @@ public class ViewAccountUseCase implements CommandHandler<ViewAccountRequest, Vi
         return ViewAccountResponse.builder()
                 .accountNumber(accountNumber)
                 .fullName(fullName)
-                .balance(balance.value().value())
+                .balance(balance.getValue().getValue())
                 .score(score)
                 .build();
     }
