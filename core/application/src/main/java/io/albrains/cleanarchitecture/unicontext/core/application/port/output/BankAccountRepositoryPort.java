@@ -10,7 +10,7 @@ public interface BankAccountRepositoryPort {
 
     BankAccount findRequired(AccountNumber accountNumber);
 
-    void add(BankAccount bankAccount);
+    BankAccount add(BankAccount bankAccount);
 
     void update(BankAccount bankAccount);
 }

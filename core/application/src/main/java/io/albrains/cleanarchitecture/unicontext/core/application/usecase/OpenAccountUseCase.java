@@ -53,12 +53,12 @@ public class OpenAccountUseCase implements CommandHandler<OpenAccountRequest, Op
             throw new ValidationException(ValidationMessages.NATIONAL_IDENTITY_NUMBER_NONEXISTENT);
         }
 
-        bankAccountRepositoryPort.add(bankAccount);
+        BankAccount bankAccountCreated = bankAccountRepositoryPort.add(bankAccount);
 
-        var accountOpened = getAccountOpened(bankAccount, timestamp);
+        var accountOpened = getAccountOpened(bankAccountCreated, timestamp);
         bankAccountOpenedMessagePublisher.publishEvent(accountOpened);
 
-        return getResponse(bankAccount);
+        return getResponse(bankAccountCreated);
     }
 
     private NationalIdentity getNationalIdentity(OpenAccountRequest request) {

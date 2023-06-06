@@ -1,5 +1,6 @@
 package io.albrains.cleanarchitecture.unicontext.database.adapter;
 
+import io.albrains.cleanarchitecture.unicontext.database.entity.BankAccountEntity;
 import io.albrains.cleanarchitecture.unicontext.database.mapper.BankAccountMapper;
 import io.albrains.cleanarchitecture.unicontext.database.repository.BankAccountJpaRepository;
 import io.albrains.cleanarchitecture.unicontext.core.domain.model.entity.BankAccount;
@@ -28,8 +29,9 @@ public class BankAccountRepositoryAdapter implements BankAccountRepositoryPort {
     }
 
     @Override
-    public void add(BankAccount bankAccount) {
-
+    public BankAccount add(BankAccount bankAccount) {
+        BankAccountEntity bankAccountEntity = bankAccountMapper.bankAccountToBankAccountEntity(bankAccount);
+        return bankAccountMapper.bankAccountEntityToBankAccount(bankAccountJpaRepository.save(bankAccountEntity));
     }
 
     @Override
