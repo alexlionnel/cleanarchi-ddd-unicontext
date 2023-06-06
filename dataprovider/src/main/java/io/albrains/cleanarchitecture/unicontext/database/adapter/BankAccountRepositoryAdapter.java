@@ -2,10 +2,9 @@ package io.albrains.cleanarchitecture.unicontext.database.adapter;
 
 import io.albrains.cleanarchitecture.unicontext.database.mapper.BankAccountMapper;
 import io.albrains.cleanarchitecture.unicontext.database.repository.BankAccountJpaRepository;
-import io.albrains.cleanarchitecture.unicontext.model.entity.BankAccount;
-import io.albrains.cleanarchitecture.unicontext.model.valueobject.AccountId;
-import io.albrains.cleanarchitecture.unicontext.model.valueobject.AccountNumber;
-import io.albrains.cleanarchitecture.unicontext.port.output.BankAccountRepositoryPort;
+import io.albrains.cleanarchitecture.unicontext.core.domain.model.entity.BankAccount;
+import io.albrains.cleanarchitecture.unicontext.core.domain.model.valueobject.AccountNumber;
+import io.albrains.cleanarchitecture.unicontext.core.application.port.output.BankAccountRepositoryPort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

@@ -1,8 +1,8 @@
 package io.albrains.cleanarchitecture.unicontext.nationalidentity.adapter;
 
-import io.albrains.cleanarchitecture.unicontext.model.valueobject.NationalIdentity;
+import io.albrains.cleanarchitecture.unicontext.core.domain.model.valueobject.NationalIdentity;
 import io.albrains.cleanarchitecture.unicontext.nationalidentity.model.UserDto;
-import io.albrains.cleanarchitecture.unicontext.port.output.NationalIdentityGateway;
+import io.albrains.cleanarchitecture.unicontext.core.application.port.output.NationalIdentityGateway;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;

@@ -1,6 +1,6 @@
 package io.albrains.cleanarchitecture.unicontext.restapi.exception.handler;
 
-import io.albrains.cleanarchitecture.unicontext.exception.ValidationException;
+import io.albrains.cleanarchitecture.unicontext.core.domain.exception.ValidationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

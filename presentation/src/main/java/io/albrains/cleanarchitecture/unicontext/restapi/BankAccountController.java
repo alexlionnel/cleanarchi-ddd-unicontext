@@ -1,11 +1,11 @@
 package io.albrains.cleanarchitecture.unicontext.restapi;
 
-import io.albrains.cleanarchitecture.unicontext.dto.OpenAccountRequest;
-import io.albrains.cleanarchitecture.unicontext.dto.OpenAccountResponse;
-import io.albrains.cleanarchitecture.unicontext.dto.ViewAccountRequest;
-import io.albrains.cleanarchitecture.unicontext.dto.ViewAccountResponse;
-import io.albrains.cleanarchitecture.unicontext.usecase.OpenAccountUseCase;
-import io.albrains.cleanarchitecture.unicontext.usecase.ViewAccountUseCase;
+import io.albrains.cleanarchitecture.unicontext.core.application.dto.OpenAccountRequest;
+import io.albrains.cleanarchitecture.unicontext.core.application.dto.OpenAccountResponse;
+import io.albrains.cleanarchitecture.unicontext.core.application.dto.ViewAccountRequest;
+import io.albrains.cleanarchitecture.unicontext.core.application.dto.ViewAccountResponse;
+import io.albrains.cleanarchitecture.unicontext.core.application.usecase.OpenAccountUseCase;
+import io.albrains.cleanarchitecture.unicontext.core.application.usecase.ViewAccountUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
