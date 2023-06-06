@@ -13,7 +13,7 @@ import io.albrains.cleanarchitecture.unicontext.core.domain.model.valueobject.Ac
 import io.albrains.cleanarchitecture.unicontext.core.domain.model.valueobject.AccountNumber;
 import io.albrains.cleanarchitecture.unicontext.core.domain.model.valueobject.Balance;
 import io.albrains.cleanarchitecture.unicontext.core.domain.model.valueobject.NationalIdentity;
-import io.albrains.cleanarchitecture.unicontext.core.application.port.output.AccountOpenedMessagePublisher;
+import io.albrains.cleanarchitecture.unicontext.core.application.port.output.BankAccountOpenedMessagePublisher;
 import io.albrains.cleanarchitecture.unicontext.core.application.port.output.BankAccountRepositoryPort;
 import io.albrains.cleanarchitecture.unicontext.core.application.port.output.CustomerGateway;
 import io.albrains.cleanarchitecture.unicontext.core.application.port.output.NationalIdentityGateway;
@@ -29,7 +29,7 @@ public class OpenAccountUseCase implements CommandHandler<OpenAccountRequest, Op
     private final NationalIdentityGateway nationalIdentityGateway;
     private final CustomerGateway customerGateway;
     private final BankAccountRepositoryPort bankAccountRepositoryPort;
-    private final AccountOpenedMessagePublisher accountOpenedMessagePublisher;
+    private final BankAccountOpenedMessagePublisher bankAccountOpenedMessagePublisher;
 
     @Override
     @Transactional
@@ -56,7 +56,7 @@ public class OpenAccountUseCase implements CommandHandler<OpenAccountRequest, Op
         bankAccountRepositoryPort.add(bankAccount);
 
         var accountOpened = getAccountOpened(bankAccount, timestamp);
-        accountOpenedMessagePublisher.publishEvent(accountOpened);
+        bankAccountOpenedMessagePublisher.publishEvent(accountOpened);
 
         return getResponse(bankAccount);
     }

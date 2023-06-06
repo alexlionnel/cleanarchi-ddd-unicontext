@@ -1,6 +1,6 @@
-package io.albrains.cleanarchitecture.unicontext.queuepublisher;
+package io.albrains.cleanarchitecture.unicontext.queuepublisher.adapter;
 
-import io.albrains.cleanarchitecture.unicontext.core.application.port.output.AccountOpenedMessagePublisher;
+import io.albrains.cleanarchitecture.unicontext.core.application.port.output.BankAccountOpenedMessagePublisher;
 import io.albrains.cleanarchitecture.unicontext.core.domain.model.event.AccountOpened;
 import io.albrains.cleanarchitecture.unicontext.infrastructure.kafka.model.avro.BankAccountOpenedAvroModel;
 import io.albrains.cleanarchitecture.unicontext.infrastructure.kafka.producer.service.KafkaMessageHelper;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 @Slf4j
-public class OpenedBankAccountMessagePublisher implements AccountOpenedMessagePublisher {
+public class BankAccountOpenedMessagePublisherAdapter implements BankAccountOpenedMessagePublisher {
 
     private final KafkaProducer<String, BankAccountOpenedAvroModel> kafkaProducer;
 
