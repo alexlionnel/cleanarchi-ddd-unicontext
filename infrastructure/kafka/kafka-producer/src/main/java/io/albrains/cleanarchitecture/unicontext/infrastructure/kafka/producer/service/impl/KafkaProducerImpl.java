@@ -2,6 +2,7 @@ package io.albrains.cleanarchitecture.unicontext.infrastructure.kafka.producer.s
 
 import io.albrains.cleanarchitecture.unicontext.infrastructure.kafka.producer.exception.KafkaProducerException;
 import io.albrains.cleanarchitecture.unicontext.infrastructure.kafka.producer.service.KafkaProducer;
+
 import lombok.extern.slf4j.Slf4j;
 import org.apache.avro.specific.SpecificRecordBase;
 import org.springframework.kafka.KafkaException;

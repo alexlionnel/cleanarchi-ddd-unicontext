@@ -1,0 +1,47 @@
+{
+  "namespace": "io.albrains.cleanarchitecture.unicontext.infrastructure.kafka.model.avro",
+  "type": "record",
+  "name": "BankAccountOpenedAvroModel",
+  "fields": [
+    {
+      "name": "accountId",
+      "type": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "accountNumber",
+      "type": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "firstName",
+      "type": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "lastName",
+      "type": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "createdAt",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "amount",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 10,
+        "scale": 2
+      }
+    }
+  ]
+}
