@@ -22,7 +22,7 @@ public class RealNationalIdentityGateway implements NationalIdentityGateway {
     @Override
     public boolean exists(NationalIdentity nationalIdentity) {
         var client = WebClient.create(url);
-        var path = getPath(nationalIdentity.getNumber());
+        var path = getPath(nationalIdentity.getIdNumber());
         var responseSpec = client.get().uri(path).retrieve();
 
         var user = responseSpec

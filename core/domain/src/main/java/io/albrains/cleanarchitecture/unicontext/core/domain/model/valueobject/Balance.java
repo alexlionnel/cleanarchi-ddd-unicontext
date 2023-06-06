@@ -9,19 +9,19 @@ import static io.albrains.cleanarchitecture.unicontext.core.domain.model.common.
 
 public class Balance {
 
-    private final Money value;
+    private final Money money;
 
-    private Balance(Money value) {
-        Guard.guard(value).againstNegative(ValidationMessages.BALANCE_NEGATIVE);
-        this.value = value;
+    private Balance(Money money) {
+        Guard.guard(money).againstNegative(ValidationMessages.BALANCE_NEGATIVE);
+        this.money = money;
     }
 
     public Balance add(TransactionAmount amount) {
-        return of(value.add(amount.value()));
+        return of(money.add(amount.getMoney()));
     }
 
     public Balance subtract(TransactionAmount amount) {
-        return of(value.subtract(amount.value()));
+        return of(money.subtract(amount.getMoney()));
     }
 
     public static Balance of(Money value) {
@@ -32,7 +32,7 @@ public class Balance {
         return new Balance(Money.of(value));
     }
 
-    public Money getValue() {
-        return value;
+    public Money getMoney() {
+        return money;
     }
 }

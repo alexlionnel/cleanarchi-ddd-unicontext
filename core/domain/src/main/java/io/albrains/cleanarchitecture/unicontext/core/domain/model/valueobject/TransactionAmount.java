@@ -8,15 +8,15 @@ import static io.albrains.cleanarchitecture.unicontext.core.domain.model.common.
 
 public class TransactionAmount {
 
-    private final Money value;
+    private final Money money;
 
-    private TransactionAmount(Money value) {
-        guard(value).againstNonPositive(ValidationMessages.AMOUNT_NOT_POSITIVE);
-        this.value = value;
+    private TransactionAmount(Money money) {
+        guard(money).againstNonPositive(ValidationMessages.AMOUNT_NOT_POSITIVE);
+        this.money = money;
     }
 
     public boolean greaterThan(Balance balance) {
-        return value.greaterThan(balance.getValue());
+        return money.greaterThan(balance.getMoney());
     }
 
     public static TransactionAmount of(Money value) {
@@ -25,5 +25,9 @@ public class TransactionAmount {
 
     public static TransactionAmount of(BigDecimal value) {
         return of(Money.of(value));
+    }
+
+    public Money getMoney() {
+        return money;
     }
 }

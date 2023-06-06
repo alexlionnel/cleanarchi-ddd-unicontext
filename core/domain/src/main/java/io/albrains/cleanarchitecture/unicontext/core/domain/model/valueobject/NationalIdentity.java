@@ -7,18 +7,18 @@ import static io.albrains.cleanarchitecture.unicontext.core.domain.model.common.
 
 public class NationalIdentity {
 
-    private final String number;
+    private final String idNumber;
 
-    private NationalIdentity(String number) {
-        Guard.guard(number).againstNull(ValidationMessages.BALANCE_NEGATIVE);
-        this.number = number;
+    private NationalIdentity(String idNumber) {
+        Guard.guard(idNumber).againstNull(ValidationMessages.BALANCE_NEGATIVE);
+        this.idNumber = idNumber;
     }
 
-    public static NationalIdentity of(String number) {
-        return new NationalIdentity(number);
+    public static NationalIdentity of(String idNumber) {
+        return new NationalIdentity(idNumber);
     }
 
-    public String getNumber() {
-        return number;
+    public String getIdNumber() {
+        return idNumber;
     }
 }

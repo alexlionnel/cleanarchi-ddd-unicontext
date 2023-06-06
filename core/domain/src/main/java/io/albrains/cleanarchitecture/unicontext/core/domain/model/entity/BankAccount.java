@@ -10,6 +10,7 @@ import io.albrains.cleanarchitecture.unicontext.core.domain.exception.Validation
 import io.albrains.cleanarchitecture.unicontext.core.domain.model.valueobject.AccountId;
 import io.albrains.cleanarchitecture.unicontext.core.domain.model.valueobject.Balance;
 import io.albrains.cleanarchitecture.unicontext.core.domain.model.valueobject.NationalIdentity;
+import lombok.Builder;
 
 import java.time.LocalDate;
 
@@ -22,6 +23,7 @@ public class BankAccount extends AggregateRoot<AccountId> {
     private final LocalDate openingDate;
     private Balance balance;
 
+    @Builder
     public BankAccount(AccountId accountId, AccountNumber accountNumber,
                        NationalIdentity nationalIdentity, AccountHolderName accountHolderName,
                        LocalDate openingDate, Balance balance) {

@@ -4,32 +4,32 @@ import java.math.BigDecimal;
 
 public class Money {
 
-    private final BigDecimal value;
+    private final BigDecimal amount;
 
-    private Money(BigDecimal value) {
-        this.value = value;
+    private Money(BigDecimal amount) {
+        this.amount = amount;
     }
 
     public static final Money ZERO = Money.of(BigDecimal.ZERO);
 
     public Money add(Money other) {
-        return Money.of(value.add(other.getValue()));
+        return Money.of(amount.add(other.getAmount()));
     }
 
     public Money subtract(Money other) {
-        return Money.of(value.subtract(other.getValue()));
+        return Money.of(amount.subtract(other.getAmount()));
     }
 
     public boolean greaterThan(Money other) {
-        return value.compareTo(other.getValue()) > 0;
+        return amount.compareTo(other.getAmount()) > 0;
     }
 
     public boolean lessThan(Money other) {
-        return value.compareTo(other.getValue()) < 0;
+        return amount.compareTo(other.getAmount()) < 0;
     }
 
     public boolean lessThanOrEqualTo(Money other) {
-        return value.compareTo(other.getValue()) <= 0;
+        return amount.compareTo(other.getAmount()) <= 0;
     }
 
     public boolean isNegative() {
@@ -44,7 +44,7 @@ public class Money {
         return new Money(value);
     }
 
-    public BigDecimal getValue() {
-        return value;
+    public BigDecimal getAmount() {
+        return amount;
     }
 }
