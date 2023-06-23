@@ -30,7 +30,7 @@ public class BankAccountController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    @GetMapping("/bank-accounts/{accountNumber}")
+    @GetMapping("/{accountNumber}")
     public ResponseEntity<ViewAccountResponse> viewAccount(@PathVariable String accountNumber) {
         var request = ViewAccountRequest.builder()
                 .accountNumber(accountNumber)
