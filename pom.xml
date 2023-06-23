@@ -13,8 +13,8 @@
         <module>container</module>
         <module>core</module>
         <module>presentation</module>
+        <module>tools</module>
         <module>infrastructure</module>
-        <module>dataprovider</module>
     </modules>
 
     <properties>
@@ -50,23 +50,33 @@
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.albrains.cleanarchitecture.unicontext.infrastructure</groupId>
+                <groupId>io.albrains.cleanarchitecture.unicontext</groupId>
+                <artifactId>tools</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.albrains.cleanarchitecture.unicontext.tools</groupId>
                 <artifactId>kafka-model</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.albrains.cleanarchitecture.unicontext.infrastructure</groupId>
+                <groupId>io.albrains.cleanarchitecture.unicontext.tools</groupId>
                 <artifactId>kafka-config-data</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.albrains.cleanarchitecture.unicontext.infrastructure</groupId>
+                <groupId>io.albrains.cleanarchitecture.unicontext.tools</groupId>
                 <artifactId>kafka-producer</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.albrains.cleanarchitecture.unicontext.infrastructure</groupId>
+                <groupId>io.albrains.cleanarchitecture.unicontext.tools</groupId>
                 <artifactId>kafka-consumer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.albrains.cleanarchitecture.unicontext</groupId>
+                <artifactId>infrastructure</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

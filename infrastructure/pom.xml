@@ -11,9 +11,38 @@
 
     <groupId>io.albrains.cleanarchitecture.unicontext</groupId>
     <artifactId>infrastructure</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>kafka</module>
-    </modules>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.albrains.cleanarchitecture.unicontext</groupId>
+            <artifactId>core-application</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.albrains.cleanarchitecture.unicontext.tools</groupId>
+            <artifactId>kafka-producer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -4,17 +4,25 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>io.albrains.cleanarchitecture.unicontext.infrastructure</groupId>
+        <groupId>io.albrains.cleanarchitecture.unicontext.tools</groupId>
         <artifactId>kafka</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>kafka-config-data</artifactId>
+    <artifactId>kafka-consumer</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <groupId>io.albrains.cleanarchitecture.unicontext.tools</groupId>
+            <artifactId>kafka-config-data</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
