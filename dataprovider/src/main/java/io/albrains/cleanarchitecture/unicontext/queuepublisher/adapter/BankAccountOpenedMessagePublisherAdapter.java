@@ -5,6 +5,7 @@ import io.albrains.cleanarchitecture.unicontext.core.domain.model.event.AccountO
 import io.albrains.cleanarchitecture.unicontext.infrastructure.kafka.model.avro.BankAccountOpenedAvroModel;
 import io.albrains.cleanarchitecture.unicontext.infrastructure.kafka.producer.service.KafkaMessageHelper;
 import io.albrains.cleanarchitecture.unicontext.infrastructure.kafka.producer.service.KafkaProducer;
+import io.albrains.cleanarchitecture.unicontext.queuepublisher.mapper.BankAccountMessageMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -15,17 +16,19 @@ import org.springframework.stereotype.Component;
 public class BankAccountOpenedMessagePublisherAdapter implements BankAccountOpenedMessagePublisher {
 
     private final KafkaProducer<String, BankAccountOpenedAvroModel> kafkaProducer;
+    private final BankAccountMessageMapper bankAccountMessageMapper;
 
     @Override
     public void publishEvent(AccountOpened accountOpened) {
-        log.info("Sending message...");
+        var bankAccountOpenedAvroModel = bankAccountMessageMapper.bankAccountOpenedEventToBankAccountOpenedAvroModel(accountOpened);
+        log.info("Sending message bankAccountOpenedAvroModel with accountNumber: {}", accountOpened.getAccountNumber().getValue().toString());
         kafkaProducer.send(
                 "topicname",
                 accountOpened.getAccountId().getValue().toString(),
-                null,
+                bankAccountOpenedAvroModel,
                 KafkaMessageHelper.buildKafkaCallback(
                         "topicname",
-                        null,
+                        bankAccountOpenedAvroModel,
                         BankAccountOpenedAvroModel.getClassSchema().getName()
                 )
         );
