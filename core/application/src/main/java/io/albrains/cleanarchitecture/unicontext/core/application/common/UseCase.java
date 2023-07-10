@@ -1,5 +1,6 @@
 package io.albrains.cleanarchitecture.unicontext.core.application.common;
 
+import org.springframework.core.annotation.AliasFor;
 import org.springframework.stereotype.Service;
 
 import java.lang.annotation.Documented;
@@ -13,4 +14,6 @@ import java.lang.annotation.Target;
 @Documented
 @Service
 public @interface UseCase {
+    @AliasFor(annotation = Service.class)
+    String value() default "";
 }
